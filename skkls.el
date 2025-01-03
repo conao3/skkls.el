@@ -33,7 +33,9 @@
           (arguments (plist-get action :arguments)))
       (cond
        ((string= command "insert")
-        (insert (aref arguments 0)))))))
+        (insert (aref arguments 0)))
+       ((string= command "delete-backward")
+        (delete-char (- (aref arguments 0))))))))
 
 (defun skkls-self-insert (arg)
   "SKKLS version of `self-insert-command'."
