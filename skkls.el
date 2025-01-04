@@ -23,6 +23,14 @@
 
 ;; Client for skkls
 
+;; If error occured track-changes-fetch, you can use this config.
+
+;;   (leaf eglot
+;;     :preface (defun my/advice--track-changes-fetch (f &rest args)
+;;                (when (car args)
+;;                  (apply f args)))
+;;     :advice (:around track-changes-fetch my/advice--track-changes-fetch))
+
 ;;; Code:
 
 (require 'cl-lib)
